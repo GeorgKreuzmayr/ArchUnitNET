@@ -3,7 +3,10 @@ param(
 [string]$source,
 [string]$tag
 )
+New-Variable -Name "ArchUnitNET" -Value $PWD.Path + "\ArchUnitNET\nupkgs\TngTech.ArchUnitNET.*.nupkg"
+New-Variable -Name "ArchUnitNETxUnit" -Value $PWD.Path + "\ArchUnitNET.xUnit\nupkgs\TngTech.ArchUnitNET.xUnit.*.nupkg"
+New-Variable -Name "ArchUnitNETNUnit" -Value $PWD.Path + "\ArchUnitNET.NUnit\nupkgs\TngTech.ArchUnitNET.xUnit.*.nupkg"
 
-dotnet nuget push ./ArchUnitNET/nupkgs/TngTech.ArchUnitNET.*.nupkg -k $apiKey -s $source
-dotnet nuget push ./ArchUnitNET.xUnit/nupkgs/TngTech.ArchUnitNET.xUnit.*.nupkg -k $apiKey -s $source
-dotnet nuget push ./ArchUnitNET.NUnit/nupkgs/TngTech.ArchUnitNET.NUnit.*.nupkg -k $apiKey -s $source
+dotnet nuget push $ArchUnitNET -k "test123" -s $source
+dotnet nuget push $ArchUnitNETxUnit -k "test123" -s $source
+dotnet nuget push $ArchUnitNETNUnit -k "test123" -s $source
