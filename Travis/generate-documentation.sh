@@ -37,7 +37,9 @@ __AUTHOR__="Francesco Romano"
 ##### Setup this script and get the current gh-pages branch.               #####
 echo 'Setting up the script...'
 # Exit with nonzero exit code if anything fails
-set -e
+set -ev
+
+TRAVIS_REPO_SLUG="GeorgKreuzmayr/ArchUnitNET"
 
 GH_REPO_ORG=`echo $TRAVIS_REPO_SLUG | cut -d "/" -f 1`
 GH_REPO_NAME=`echo $TRAVIS_REPO_SLUG | cut -d "/" -f 2`
