@@ -43,7 +43,7 @@ set -ev
 GH_REPO_ORG=`echo $TRAVIS_REPO_SLUG | cut -d "/" -f 1`
 GH_REPO_NAME=`echo $TRAVIS_REPO_SLUG | cut -d "/" -f 2`
 GH_REPO_REF="github.com/$GH_REPO_ORG/$GH_REPO_NAME.git"
-DOXYFILE=$TRAVIS_BUILD_DIR/documentation/Doxyfile
+DOXYFILE="$TRAVIS_BUILD_DIR/documentation/Doxyfile"
 
 
 # Get the current gh-pages branch
