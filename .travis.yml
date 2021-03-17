@@ -7,7 +7,7 @@ jobs:
       mono: none
       os: linux
       before_script:
-        - sudo apt-get install doxygen
+        - sudo apt-get install doxygen doxygen-doc graphviz
       script: chmod +x ./Travis/test_linux.sh && ./Travis/test_linux.sh
       after_success:
         # Generate the docs only if master, the travis_build_docs is true and we can use secure variables
