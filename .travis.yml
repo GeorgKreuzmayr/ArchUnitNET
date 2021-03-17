@@ -13,7 +13,7 @@ jobs:
           if [[ "$TRAVIS_BRANCH" = "master" && -n "$TRAVIS_BUILD_DOCS" && "$TRAVIS_PULL_REQUEST" = "false" ]] ; then
             cd $PROJECT_DIR_ABS
             source Travis/setup-ssh.sh || travis_terminate 1
-            Travis/generateDocumentation.sh || travis_terminate 1
+            Travis/generate-documentation.sh || travis_terminate 1
           fi
     - stage: windows_build
       mono: none
