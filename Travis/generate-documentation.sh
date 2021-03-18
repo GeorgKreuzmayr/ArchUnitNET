@@ -47,7 +47,7 @@ DOXYFILE="$TRAVIS_BUILD_DIR/documentation/Doxyfile"
 
 
 # Get the current gh-pages branch
-git clone -b gh-pages git@github.com:$GH_REPO_ORG/$GH_REPO_NAME.git code_docs
+echo | git clone -b gh-pages git@github.com:$GH_REPO_ORG/$GH_REPO_NAME.git code_docs
 cd code_docs
 
 
