@@ -12,3 +12,5 @@ chmod 600 "$SSH_FILE" \
        "Host github.com" \
        "  IdentityFile $SSH_FILE" \
        "  LogLevel ERROR" >> ~/.ssh/config
+
+ssh-keyscan github.com >> "$HOME/.ssh/known_hosts"
