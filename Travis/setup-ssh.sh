@@ -16,5 +16,7 @@ chmod 600 "$SSH_FILE" \
 ssh-keyscan github.com >> "$HOME/.ssh/known_hosts"
 
 eval $(ssh-agent -s)
-ssh-add "$SSH_FILE"
+
+chmod +x "$TRAVIS_BUILD_DIR/Travis/ssh-add-helper.sh"
+echo "$SSH_PASSPHRASE"| SSH_ASKPASS="$TRAVIS_BUILD_DIR/Travis/ssh-add-helper.sh" ssh-add "$SSH_FILE" 2> /dev/null
 
