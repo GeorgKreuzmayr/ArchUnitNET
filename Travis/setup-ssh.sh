@@ -14,3 +14,7 @@ chmod 600 "$SSH_FILE" \
        "  LogLevel ERROR" >> ~/.ssh/config
 
 ssh-keyscan github.com >> "$HOME/.ssh/known_hosts"
+
+eval $(ssh-agent -s)
+ssh-add "$SSH_FILE"
+
