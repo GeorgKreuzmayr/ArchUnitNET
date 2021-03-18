@@ -15,8 +15,3 @@ chmod 600 "$SSH_FILE" \
 
 ssh-keyscan github.com >> "$HOME/.ssh/known_hosts"
 
-eval $(ssh-agent -s)
-
-chmod +x "$TRAVIS_BUILD_DIR/Travis/ssh-add-helper.sh"
-ssh-add "$SSH_FILE"
-
