@@ -8,7 +8,7 @@ jobs:
       os: linux
       before_script:
         - sudo apt-get install doxygen doxygen-doc graphviz
-      script: chmod +x ./Travis/test_linux.sh && ./Travis/test_linux.sh
+      script: chmod +x ./Travis/deploy_documentation.sh && ./Travis/deploy_documentation.sh
       deploy:
         skip_cleanup: true
         provider: script
